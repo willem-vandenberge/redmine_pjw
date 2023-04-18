@@ -24,4 +24,6 @@ services:
       MYSQL_DATABASE: redmine
       MYSQL_USER: redmine
       MYSQL_PASSWORD: 2mSGoLkpsXre
+    volumes:
+      - ./redmineSQL:/var/lib/mysql
 
