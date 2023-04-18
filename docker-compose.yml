@@ -15,7 +15,7 @@ services:
       REDMINE_DB_PASSWORD: example
       REDMINE_SECRET_KEY_BASE: supersecretkey
 
-  redmine_db:
+  redmine-db:
     image: mysql:5.7
     container_name: redmine_db
     restart: always
