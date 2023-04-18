@@ -10,7 +10,7 @@ services:
     ports:
       - 8080:3000
     environment:
-      REDMINE_DB_MYSQL: redmine_db
+      REDMINE_DB_MYSQL: redmine
       REDMINE_DB_PASSWORD: 2mSGoLkpsXre
       REDMINE_DB_DATABASE: redmine
       REDMINE_DB_USERNAME: redmine
@@ -26,4 +26,4 @@ services:
       MYSQL_PASSWORD: 2mSGoLkpsXre
     volumes:
       - ./redmineSQL:/var/lib/mysql
-      - ./redmineSQL/config:/etc/mysql/conf.d
+
