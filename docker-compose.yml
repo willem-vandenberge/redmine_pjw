@@ -1,4 +1,4 @@
-version: '4'
+version: '3.1'
 
 services:
 
@@ -13,7 +13,7 @@ services:
       REDMINE_DB_MYSQL: redmine
       REDMINE_DB_PASSWORD: 2mSGoLkpsXre
       REDMINE_DB_DATABASE: redmine
-      REDMINE_DB_USERNAME: redmine
+      REDMINE_PLUGINS_MIGRATE: 1
 
   redmine-db:
     image: mysql:5.7.16
@@ -22,7 +22,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 2mSGoLkpsXre
       MYSQL_DATABASE: redmine
-      MYSQL_USER: redmine
       MYSQL_PASSWORD: 2mSGoLkpsXre
     volumes:
       - ./redmineSQL:/var/lib/mysql
