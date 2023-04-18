@@ -17,7 +17,7 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: redmine_DB
+    container_name: redmine_db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 2mSGoLkpsXre
