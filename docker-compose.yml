@@ -16,7 +16,10 @@ services:
       REDMINE_PLUGINS_MIGRATE: 1
 
   redmine-db:
-    image: mysql:5.7.16
+    image: mysql:5.7
+    command: [--ignore-db-dir=lost+found]
+    args:
+      - "--ignore-db-dir=lost+found"
     container_name: redmine
     restart: always
     environment:
