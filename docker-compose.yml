@@ -14,6 +14,8 @@ services:
       REDMINE_PLUGINS_MIGRATE: 1
     depends_on:
       - redmine-db
+    volumes:
+      - /data/files/dmsf:/usr/src/redmine/files:z
 
   redmine-db:
     image: mysql:5.7
