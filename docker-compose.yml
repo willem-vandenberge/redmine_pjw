@@ -3,19 +3,26 @@ version: '3.1'
 services:
 
   redmine:
-    image: redmine
+    image: redmine:3.3.9
     restart: always
     ports:
       - 8080:3000
     environment:
-      REDMINE_DB_MYSQL: db
+      REDMINE_DB_MYSQL: redmine-db
       REDMINE_DB_PASSWORD: 2mSGoLkpsXre
-      REDMINE_SECRET_KEY_BASE: supersecretkey
+      REDMINE_DB_DATABASE: redmine
+      REDMINE_PLUGINS_MIGRATE: 1
 
-  db:
-    image: mysql:5.7
+  redmine-db:
+    image: mariadb
+    container_name: redmine-db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 2mSGoLkpsXre
+      MYSQL_USER: redmine
       MYSQL_DATABASE: redmine
+      MYSQL_PASSWORD: 2mSGoLkpsXre
+    volumes:
+      - /data/redmine/redmineSQL:/var/lib/mysql
+      - /data/redmine/redmineSQL/config:/etc/mysql/conf.d
 
