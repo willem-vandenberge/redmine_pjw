@@ -7,13 +7,13 @@ services:
     restart: always
     depends_on:
       - redmine-db
-    stdin_open: true
     ports:
-      - 80:3000
+      - 8080:3000
     environment:
-      REDMINE_DB_MYSQL: db
-      REDMINE_DB_PASSWORD: example
-      REDMINE_SECRET_KEY_BASE: supersecretkey
+      REDMINE_DB_MYSQL: redmine-db
+      REDMINE_DB_PASSWORD: 2mSGoLkpsXre
+      REDMINE_DB_DATABASE: redmine
+      REDMINE_DB_USERNAME: redmine
 
   redmine-db:
     image: mysql:5.7
