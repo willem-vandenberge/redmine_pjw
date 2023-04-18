@@ -16,7 +16,7 @@ services:
       REDMINE_DB_USERNAME: redmine
 
   redmine-db:
-    image: mysql:5.7
+    image: mysql:5.7.16
     container_name: redmine
     restart: always
     environment:
