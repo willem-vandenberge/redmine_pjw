@@ -25,6 +25,6 @@ services:
       MYSQL_USER: redmine
       MYSQL_PASSWORD: 2mSGoLkpsXre
     volumes:
-      - ./redmineSQL:/var/lib/mysql
+      - ./redmineSQL:/var/lib/mysql/
       - ./redmineSQL/config:/etc/mysql/conf.d
 
