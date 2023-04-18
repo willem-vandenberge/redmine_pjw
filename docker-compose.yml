@@ -14,16 +14,9 @@ services:
       REDMINE_PLUGINS_MIGRATE: 1
     depends_on:
       - redmine-db
-    volumes:
-      - /data/redmine/plugins:/usr/src/redmine/plugins:z
-      - /data/redmine/themes:/usr/src/redmine/public/themes:z
-      - /data/redmine/files:/usr/src/redmine/files:z
-      - /data/redmine/log:/usr/src/redmine/log/:z
-      - /data/redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml:ro
-      - /data/redmine/config/en.yml:/usr/src/redmine/config/locales/en.yml:ro
 
   redmine-db:
-    image: mariadb
+    image: mysql:5.7
     container_name: redmine-db
     restart: always
     environment:
@@ -32,6 +25,5 @@ services:
       MYSQL_DATABASE: redmine
       MYSQL_PASSWORD: 2mSGoLkpsXre
     volumes:
-      - /data/redmine/redmineSQL:/var/lib/mysql
-      - /data/redmine/redmineSQL/config:/etc/mysql/conf.d
+      - /home/wvandenberge/backup/2023_04_17_redmine.sql:/docker-entrypoint-initdb.d 
 
