@@ -3,22 +3,19 @@ version: '3.1'
 services:
 
   redmine:
-    image: redmine
+    image: redmine:3.3.9
     restart: always
-    depends_on:
-      - redmine-db
     ports:
       - 8080:3000
     environment:
-      REDMINE_DB_MYSQL: redmine
+      REDMINE_DB_MYSQL: redmine-db
       REDMINE_DB_PASSWORD: 2mSGoLkpsXre
       REDMINE_DB_DATABASE: redmine
       REDMINE_PLUGINS_MIGRATE: 1
 
   redmine-db:
     image: mysql:5.7
-    command: [--ignore-db-dir=lost+found]
-    container_name: redmine
+    container_name: redmine-db
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 2mSGoLkpsXre
