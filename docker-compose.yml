@@ -5,9 +5,11 @@ services:
   redmine:
     image: redmine
     restart: always
+    depends_on:
+      - redmine-db
     stdin_open: true
     ports:
-      - 8080:3000
+      - 80:3000
     environment:
       REDMINE_DB_MYSQL: db
       REDMINE_DB_PASSWORD: example
@@ -15,7 +17,10 @@ services:
 
   db:
     image: mysql:5.7
+    container_name: redmine_DB
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: 2mSGoLkpsXre
       MYSQL_DATABASE: redmine
+      MYSQL_USER: redmine
+      MYSQL_PASSWORD: 2mSGoLkpsXre
