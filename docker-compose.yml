@@ -19,6 +19,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 2mSGoLkpsXre
+      MYSQL_USER: redmine
       MYSQL_DATABASE: redmine
       MYSQL_PASSWORD: 2mSGoLkpsXre
     volumes:
