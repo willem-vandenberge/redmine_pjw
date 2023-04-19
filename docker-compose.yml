@@ -16,6 +16,8 @@ services:
       - redmine-db
     volumes:
       - /data/redmine/plugins:/usr/src/redmine/plugins:z
+      - /data/redmine/files:/usr/src/redmine/files:z
+
 
   redmine-db:
     image: mysql:5.7
