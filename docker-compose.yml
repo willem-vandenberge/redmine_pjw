@@ -9,13 +9,11 @@ services:
       - 80:3000
     environment:
       REDMINE_DB_MYSQL: redmine-db
-      REDMINE_DB_PASSWORD: Redmine123@!
+      REDMINE_DB_PASSWORD: 2mSGoLkpsXre
       REDMINE_DB_DATABASE: redmine
       REDMINE_PLUGINS_MIGRATE: 1
     depends_on:
       - redmine-db
-    
-
 
   redmine-db:
     image: mysql:5.7
@@ -25,7 +23,7 @@ services:
       MYSQL_ROOT_PASSWORD: 2mSGoLkpsXre
       MYSQL_USER: redmine
       MYSQL_DATABASE: redmine
-      MYSQL_PASSWORD: Redmine123@!
+      MYSQL_PASSWORD: 2mSGoLkpsXre
     volumes:
       - /home/wvandenberge/backup:/docker-entrypoint-initdb.d 
 
