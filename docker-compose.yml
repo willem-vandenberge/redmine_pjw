@@ -17,6 +17,8 @@ services:
     volumes:
       - /data/redmine/plugins:/usr/src/redmine/plugins:z
       - /data/redmine/files:/usr/src/redmine/files:z
+      - /data/redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml:ro
+
 
 
   redmine-db:
