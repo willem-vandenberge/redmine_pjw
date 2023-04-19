@@ -11,6 +11,7 @@ services:
       REDMINE_DB_MYSQL: redmine-db
       REDMINE_DB_PASSWORD: 2mSGoLkpsXre
       REDMINE_DB_DATABASE: redmine
+      REDMINE_DB_USERNAME: redmine
       REDMINE_PLUGINS_MIGRATE: 1
     depends_on:
       - redmine-db
