@@ -15,7 +15,12 @@ services:
     depends_on:
       - redmine-db
     volumes:
+      - /data/redmine/plugins/plugins:/usr/src/redmine/plugins:z
       - /data/files/dmsf:/usr/src/redmine/files:z
+      - /data/redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml:ro
+      - /data/redmine/config/en.yml:/usr/src/redmine/config/locales/en.yml:ro
+
+
 
   redmine-db:
     image: mysql:5.7
