@@ -11,7 +11,6 @@ services:
       REDMINE_DB_MYSQL: redmine-db
       REDMINE_DB_PASSWORD: 2mSGoLkpsXre
       REDMINE_DB_DATABASE: redmine
-      REDMINE_DB_USERNAME: redmine
       REDMINE_PLUGINS_MIGRATE: 1
     depends_on:
       - redmine-db
@@ -27,6 +26,4 @@ services:
       MYSQL_USER: redmine
       MYSQL_DATABASE: redmine
       MYSQL_PASSWORD: 2mSGoLkpsXre
-    volumes:
-      - /home/wvandenberge/backup:/docker-entrypoint-initdb.d 
-
+   
