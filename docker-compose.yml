@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   redmine:
-    image: redmine
+    image: redmine:3.3.9
     restart: always
     ports:
       - 80:3000
