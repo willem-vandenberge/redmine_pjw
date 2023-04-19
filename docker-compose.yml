@@ -1,10 +1,10 @@
-version: '3.8'
+version: '3.1'
 
 services:
 
   redmine:
     image: redmine:3.3.9
-    restart: always
+    #restart: always
     ports:
       - 80:3000
     environment:
