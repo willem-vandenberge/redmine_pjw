@@ -8,6 +8,7 @@ services:
     ports:
       - 80:3000
     environment:
+      TZ: Europe/Brussels
       REDMINE_DB_MYSQL: redmine-db
       REDMINE_DB_PASSWORD: 2mSGoLkpsXre
       REDMINE_DB_DATABASE: redmine
@@ -18,7 +19,6 @@ services:
       - /data/redmine/plugins/plugins:/usr/src/redmine/plugins:z
       - /data/files/dmsf:/usr/src/redmine/files:z
       - /data/redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml:ro
-      - /data/redmine/config/en.yml:/usr/src/redmine/config/locales/en.yml:ro
 
 
 
