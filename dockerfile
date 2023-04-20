@@ -5,4 +5,3 @@ RUN apt-get update && apt-get install -y make gcc && \
     # ref https://github.com/danmunn/redmine_dmsf/issues/984
     sed -i -e 's/config.eager_load = true/config.eager_load = false/g' config/environments/production.rb
     # add modified redmine_dmsf
-ADD --chown=redmine:redmine ./redmine_dmsf /usr/src/redmine/pluginsplugins/redmine_dmsf
