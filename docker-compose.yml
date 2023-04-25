@@ -18,7 +18,8 @@ services:
       - redmine-db
     volumes:
       - /data/redmine/plugins:/usr/src/redmine/plugins
-      - /data/redmine/files:/usr/src/redmine/files:z
+      - /data/redmine/files:/usr/src/redmine/files
+      - /data/redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml
 
 
 
@@ -33,4 +34,6 @@ services:
       MYSQL_PASSWORD: 2mSGoLkpsXre
     volumes:
       - /home/wvandenberge/backup:/docker-entrypoint-initdb.d 
+      - /data/redmine/redmineSQL:/var/lib/mysql
+      - /data/redmine/redmineSQL/config:/etc/mysql/conf.d
 
