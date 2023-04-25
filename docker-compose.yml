@@ -33,7 +33,7 @@ services:
       MYSQL_DATABASE: redmine
       MYSQL_PASSWORD: 2mSGoLkpsXre
     volumes:
-      - /home/wvandenberge/backup:/docker-entrypoint-initdb.d 
+      #- /home/wvandenberge/backup:/docker-entrypoint-initdb.d 
       - /data/redmine/redmineSQL:/var/lib/mysql
       - /data/redmine/redmineSQL/config:/etc/mysql/conf.d
 
