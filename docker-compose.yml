@@ -42,5 +42,5 @@ services:
       #- /data/redmine/redmineSQL/config:/etc/mysql/conf.d
 
   networks:
-      - redmine_net
+      redmine_net:
 
