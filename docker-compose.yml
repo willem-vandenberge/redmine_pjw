@@ -16,6 +16,8 @@ services:
       REDMINE_PLUGINS_MIGRATE: 1
     depends_on:
       - redmine-db
+    networks:
+      - redmine_net
     volumes:
       - /data/redmine/plugins:/usr/src/redmine/plugins
       - /home/redmine/redmine-3.3.2/files:/usr/src/redmine/files
@@ -32,8 +34,13 @@ services:
       MYSQL_USER: redmine
       MYSQL_DATABASE: redmine
       MYSQL_PASSWORD: 2mSGoLkpsXre
+    networks:
+      - redmine_net
     volumes:
       - /home/wvandenberge/backup:/docker-entrypoint-initdb.d 
       #- /data/redmine/redmineSQL:/var/lib/mysql
       #- /data/redmine/redmineSQL/config:/etc/mysql/conf.d
+
+  networks:
+      - redmine_net
 
