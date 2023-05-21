@@ -34,7 +34,7 @@ services:
       MYSQL_PASSWORD: 2mSGoLkpsXre
     volumes:
       - /home/wvandenberge/backup:/docker-entrypoint-initdb.d 
-      - ./redmineSQL:/var/lib/mysql
+      #- ./redmineSQL:/var/lib/mysql
       #- ./home/wvandenberge/backup
 
       
