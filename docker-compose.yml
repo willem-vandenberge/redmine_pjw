@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.1'
 
 services:
 
@@ -18,13 +18,13 @@ services:
       - redmine-db
     volumes:
       - /data/redmine/plugins:/usr/src/redmine/plugins
-      - /home/redmine/redmine-3.3.2/files:/usr/src/redmine/files
+      - /home/redmine/redmine-3.3.2/files:/usr/src/redmine/files:z
       - /data/redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml
 
 
 
   redmine-db:
-    image: "mysql:8"
+    image: "mysql:5.7"
     container_name: redmine-db
     restart: always
     environment:
