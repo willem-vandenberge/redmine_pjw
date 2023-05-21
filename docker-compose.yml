@@ -35,5 +35,7 @@ services:
     volumes:
       #- /home/wvandenberge/backup:/docker-entrypoint-initdb.d 
       - ./redmineSQL:/var/lib/mysql
+      - ./home/wvandenberge/backup
+
       
 
